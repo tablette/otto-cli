@@ -3,14 +3,8 @@
     
     <!-- header -->
     <div id="header">
-        <div class="topnav">
-            <a class="active" href="#home">{{ title }}</a>  
-            <a href="#signin">Sign In</a>
-            <a href="#signup">Sign Up</a>
-            <a href="#contact">Contact</a>
-            <a href="#blog">Blog</a>
-            <a href="#about">About</a>
-        </div>
+        <!-- nav bar goes here -->
+        <Navbar />
     </div>
 
     <!-- hero -->
@@ -136,8 +130,12 @@
 </template>
 
 <script>
+import Navbar from './Navbar'
 export default {
   name: 'app', // name of vue component
+  components: {
+      Navbar
+  },
   data () { // function keeps data safe, limits sharing
     return {
       title: "otto",
