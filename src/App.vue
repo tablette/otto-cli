@@ -448,6 +448,7 @@ button {
     padding: 0 1em;
     margin: 0.1em 0;
     height: 1.5em;
+    height: 100%;
     font-size: 1em;
     line-height: 1.5em;
     border-radius: 25px;
