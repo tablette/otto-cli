@@ -3,7 +3,7 @@
         <h2>What people are saying about OTTO:</h2>
         <div v-for="rvw in rvws" :key="rvw.id">
             <h3 class="rvw-title chip cat">{{ rvw.title }}</h3>
-            <h3 class="rvw-body chip lab">{{ rvw.body }}</h3>
+            <h3 class="rvw-body chip lab">{{ `${rvw.body} ${rvw.body} ${rvw.body}` | snippet }}</h3>
         </div>
     </div>
 </template>
