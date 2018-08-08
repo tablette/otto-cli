@@ -78,33 +78,27 @@
         <p class="spacer-gentop"></p>
         
         <!-- attempt #1 at cRud: render directly in App -->
-        <h2>Your categories:</h2>
+        <!-- <h2>Your categories:</h2>
         <ul class="typein-list">
             <li class="chip cat" v-for="(category, index) in categories" :key="index">{{ category }} 
-                <!-- edit -->
                 <span class="editbtn" v-on:click="categories.splice(index, 1, editItem())">&#10000;</span>
-                <!-- delete -->
                 <span class="closebtn" v-on:click="categories.splice(index, 1)">&times;</span>
             </li>
         </ul>
-
         <p class="spacer-gentop"></p>
         
         <h2>Your labels:</h2>
         <ul class="typein-list">
             <li class="chip lab" v-for="(label, index) in labels" :key="index">{{ label }}
-            <!-- edit -->
             <span class="editbtn" v-on:click="labels.splice(index, 1, editItem())">&#10000;</span>
-            <!-- delete -->
             <span class="closebtn" v-on:click="labels.splice(index, 1)">&times;</span></li>
         </ul>
-
-        <p class="spacer-gentop"></p>
+        <p class="spacer-gentop"></p> -->
 
         <!-- attempt #2 at cRud: render in App from components AllCategories and AllLabels -->
         <!-- these are rendering but they are not working right from w/in those components -->
-        <AllCategories :categories="categories" :editItem="editItem" />
-        <AllLabels :labels="labels" :editItem="editItem" />       
+        <AllCategories :categories="categories" :editItem="editItem" @nbr="showNumber" />
+        <AllLabels :labels="labels" :editItem="editItem" @nbr="showNumber"/>       
 
         <p class="spacer-bottom"></p>
         
@@ -211,6 +205,10 @@ export default {
         // attempt 2 - add input field, and on click capture input, remove input field and return input
         // ...
     },
+    showNumber(payload){
+        // need to pass back to DOM in AllCategories.vue
+        console.log(payload + 1)
+    }
   }
 }
 </script>

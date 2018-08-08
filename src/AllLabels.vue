@@ -2,7 +2,11 @@
     <div id="all-labels">
         <h2>*from component* All Labels</h2>    
         <div v-for="(lab, index) in labels" :key="index">
-            <span class="chip lab">{{ lab }}
+            <span class="chip lab">
+                <!-- show number (for now just prints a flower to the DOM and the number to the console) -->
+                <span @click="number(index)">&#8277;</span>
+                <!-- display -->
+                {{ lab }}
                 <!-- edit -->
                 <span class="editbtn" v-on:click="labels.splice(index, 1, editItem())">&#10000;</span>
                 <!-- delete -->
@@ -20,6 +24,11 @@ export default {
     data(){
         return{
             // nothing right now
+        }
+    },
+    methods: {
+        number(index){
+            this.$emit('nbr', index) // pass up to parent
         }
     }
 }

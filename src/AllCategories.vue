@@ -1,15 +1,17 @@
 <template>
     <div id="all-categories">
-        <h2>*from component* All Categories</h2>
+        <h2>All Categories</h2>
         <!-- cycle through cateogries -->
         <div v-for="(cat, index) in categories" :key="index">
             <!-- and render to browser -->
-            <span class="chip cat">{{ cat }}
+            <span class="chip cat">
+                <!-- show number (for now just prints an asterism to the DOM and the number to the console) -->
+                <span @click="number(index)">&#8258;</span>
+                <!-- display -->
+                {{ cat }}
                 <!-- edit -->
-                <!-- not working right now - revisit lesson 21 -->
                 <span class="editbtn" v-on:click="categories.splice(index, 1, editItem())">&#10000;</span>
                 <!-- delete -->
-                <!-- not working right now - revisit lesson 21 -->
                 <span class="closebtn" v-on:click="categories.splice(index, 1)">&times;</span>
             </span>
         </div>
@@ -23,7 +25,12 @@ export default {
     props: ['categories', 'editItem'],
     data(){
         return{
-            // nothing right now
+            //
+        }
+    },
+    methods: {
+        number(index){
+            this.$emit('nbr', index) // pass up to parent
         }
     }
 }
