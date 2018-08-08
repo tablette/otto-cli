@@ -16,8 +16,12 @@
         <a href="#getting-started">Quick Start</a>
     </div>
 
+    <!-- blurb -->
     <h3>{{ description }}</h3>
     
+    <!-- reviews - dummy data -->
+    <Reviews />
+
     <!-- "sign up" / demo -->
     <div class="content-block">
 
@@ -96,7 +100,6 @@
         <p class="spacer-gentop"></p> -->
 
         <!-- attempt #2 at cRud: render in App from components AllCategories and AllLabels -->
-        <!-- these are rendering but they are not working right from w/in those components -->
         <AllCategories :categories="categories" :editItem="editItem" @nbr="showNumber" />
         <AllLabels :labels="labels" :editItem="editItem" @nbr="showNumber"/>       
 
@@ -133,6 +136,7 @@
 
 <script>
 import Navbar from './Navbar'
+import Reviews from './Reviews'
 import AllCategories from './AllCategories'
 import AllLabels from './AllLabels'
 
@@ -140,6 +144,7 @@ export default {
   name: 'app', // name of vue component
   components: {
       Navbar,
+      Reviews,
       AllCategories, // AllCategories: AllCategories
       AllLabels, // same - just a shorthand
   },
