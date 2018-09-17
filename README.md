@@ -1,6 +1,8 @@
-# otto
+# otto the taxonomy tool
 
-> otto the taxonomy tool
+For the latest version of OTTO, go to https://github.com/tablette/otto-cli-webpack
+
+*
 
 ## Build Setup
 
